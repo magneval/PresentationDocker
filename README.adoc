@@ -14,4 +14,4 @@ Presentation Docker
 
 
 [[asciidoc_ghpages_travis_docker]]
-image::{cover-asciidoc-ghpages}[AsciiDoc to Github Pages with Travis and Docker Asciidoctor,950]
+image::https://mgreau.com/posts/images/cover-asciidoc-ghpages.svg[AsciiDoc to Github Pages with Travis and Docker Asciidoctor,950]
