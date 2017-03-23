@@ -6,7 +6,7 @@ services:
 before_install:
   - mkdir -p output
   - docker pull asciidoctor/docker-asciidoctor
-
+  - git checkout master
 script:
   - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name asciidoc-to-html asciidoctor/docker-asciidoctor asciidoctor -D /documents/docs *.adoc
   - docker run -v $TRAVIS_BUILD_DIR:/documents/ --name asciidoc-to-pdf asciidoctor/docker-asciidoctor asciidoctor-pdf -D /documents/docs *.adoc
