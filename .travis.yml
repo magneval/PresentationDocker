@@ -24,6 +24,6 @@ after_success:
   - cd ..
   - git config user.name "${GH_USER_NAME}"
   - git config user.email "{GH_USER_EMAIL}"
+  - git remote add origin-pages https://${GH_TOKEN}@@${GH_REF}"
   - git add docs ; git commit -m "Deploy to GitHub Pages"
-  - git remote show origin
-  - git push  origin
+  - git push --set-upstream origin-pages 
