@@ -3,6 +3,10 @@
 // title: Présentation VM et docker
 // :backend: deckjs
 // ---
+:revealjs_mouseWheel: true
+:revealjs_history: true
+:revealjs_hideAddressBar: true
+
 
 = Presentation VM Docker
 
