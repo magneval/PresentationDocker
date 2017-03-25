@@ -1,3 +1,9 @@
+// ---
+// layout: master
+// title: Présentation VM et docker
+// :backend: deckjs
+// ---
+
 = Presentation VM Docker
 
 :link-github-project-ghpages: https://magneval.github.io/PresentationDocker
