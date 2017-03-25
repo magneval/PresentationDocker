@@ -11,9 +11,9 @@
 :link-demo-pdf: {link-github-project-ghpages}/demo.pdf
 :link-demo-adoc: https://raw.githubusercontent.com/magneval/PresentationDocker/master/demo.adoc
 
-Presentation Docker
+== Presentation Docker
 
-* Historique:
+== Historique:
 ** {link-demo-adoc}[AsciiDoc source file]
 ** {link-demo-html}[HTML output file]
 ** {link-demo-pdf}[PDF output file]
