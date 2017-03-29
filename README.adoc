@@ -19,14 +19,20 @@
 
 Charles de MAGNEVAL <charles.de_magneval@open-groupe.com>
 v1.0, 2016-01-10
-:toc:
+:toc: toc
 :homepage: https://github.com/magneval/
+
+== Plan
+[%step]
+* historique
+* la virtualisation
+* les hypervirseurs
+* l'approche containeur
+* le cloud
 
 == Historique:
 [%step]
-** {link-demo-adoc}[AsciiDoc source file]
-** {link-demo-html}[HTML output file]
-** {link-demo-pdf}[PDF output file]
+** 
 
 
 [NOTE.speaker]
@@ -35,3 +41,13 @@ Module est le point d'entré de l'application
 Service permet de fournir un service au controlleurs
 Controller 
 --
+
+== la virtualisation
+
+== les hypervirseurs
+
+== l'approche containeur
+
+== le cloud
+
+
