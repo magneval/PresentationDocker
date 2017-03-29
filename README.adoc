@@ -32,14 +32,22 @@ v1.0, 2016-01-10 +
 
 == Historique:
 [%step]
-** 
-
+* l'ordinateur 8 bits
+** un processeur
+** la ram
+** la rom
+** le stockage de masse
+** le programme
+* la version 16 bits
+** pas le programme, l'OS
+** le reseau
+** le multitache
 
 [NOTE.speaker]
 --
-Module est le point d'entré de l'application
-Service permet de fournir un service au controlleurs
-Controller 
+aparition d'api sur les couches basses +
+drivers +
+standardisation
 --
 
 == la virtualisation
