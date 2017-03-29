@@ -17,9 +17,9 @@
 
 == Presentation Docker
 
-Charles de MAGNEVAL <charles.de_magneval@open-groupe.com>
-v1.0, 2016-01-10
-:toc: toc
+Charles de MAGNEVAL <charles.de_magneval@open-groupe.com> +
+v1.0, 2016-01-10 +
+:toc: toc +
 :homepage: https://github.com/magneval/
 
 == Plan
