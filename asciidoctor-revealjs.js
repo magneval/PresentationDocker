@@ -7,4 +7,5 @@ require('asciidoctor-reveal.js');
 // Convert the document 'presentation.adoc' using the reveal.js converter
 var attributes = 'revealjsdir=node_modules/reveal.js@';
 var options = {safe: 'safe', backend: 'revealjs', attributes: attributes};
-Asciidoctor.convertFile('presentation.adoc', options); (1)
+// Asciidoctor.convertFile('presentation.adoc', options); (1)
+Asciidoctor.convertFile('README.adoc', options); (1)
