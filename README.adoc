@@ -39,9 +39,15 @@ v1.0, 2016-01-10 +
 ** le stockage de masse
 ** le programme
 * la version 16 bits
-** pas le programme, l'OS
-** le reseau
 ** le multitache
+** le reseau
+** pas le programme, l'OS
+*** dos
+*** OS400
+*** Unix
+*** windows
+*** Linux
+*** Mac OS X
 
 [NOTE.speaker]
 --
@@ -51,6 +57,15 @@ standardisation
 --
 
 == la virtualisation
+La migration IBM 360 vers IBM380 Oblige IBM a faire le premier emulateur.
+On peut faire tourner une machine dans une autre.
+La machine devient un simple programme 
+On utilse tous une JVM
+Il existe de nombreuses solutions :
+* VMware
+* Qemu
+* VirtualBox
+*
 
 == les hypervirseurs
 
