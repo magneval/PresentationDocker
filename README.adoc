@@ -63,14 +63,14 @@ La migration IBM 360 vers IBM380 Oblige IBM a faire le premier emulateur.
 On peut faire tourner une machine dans une autre.+
 La machine devient un simple programme 
 
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Diagramme_ArchiEmulateur.png/1169px-Diagramme_ArchiEmulateur.png[canvas,size=contain]
+
 Il existe de nombreuses solutions :
 
 * VMware
 * Qemu
 * VirtualBox
 * Virtual PC
-
-image::https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Diagramme_ArchiEmulateur.png/1169px-Diagramme_ArchiEmulateur.png[canvas,size=contain]
 
 [NOTE.speaker]
 --
@@ -81,10 +81,39 @@ On utilse tous une JVM
 == les hypervirseurs
 
 image::https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Diagramme_ArchiHyperviseur.png/1169px-Diagramme_ArchiHyperviseur.png[canvas,size=contain]
+L'approche est similaire, mais l'OS est allege pour permettre un acces plus rapide aux couches basse du systeme et donc ameliorer les performances. 
+
+Cette technique peut aussi etre aidee par des instructions special dans le coeur du processeur permettant un changement de contexte pour passer d'un OS a l'autre
+
+Les plus courrants sont :
+
+* VMware ESX serveur
+* Xen (Citrix)
+* Microsoft Hyper-V Server
+
 
 == l'approche containeur
 
 image::https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Diagramme_ArchiIsolateur.png/1169px-Diagramme_ArchiIsolateur.png[canvas,size=contain]
+Ici plus de couche intermediaires, on separe juste le programme des autres
+L'approche existe deouis longtemps :
+* chroot
+* BSD Jail
+* Zone Solaris 
+* LXC
+
+== Docker
+
+Solution basee sur des techniques existantes et eprouvees :
+* LXC,
+* CGgroup,
+* vritualisaton du reseau,
+* UnionFS,
+* ...
+
+Aproche legere
+
+
 
 == le cloud
 
