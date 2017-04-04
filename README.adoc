@@ -57,15 +57,24 @@ standardisation
 --
 
 == la virtualisation
+
 La migration IBM 360 vers IBM380 Oblige IBM a faire le premier emulateur.
+
 On peut faire tourner une machine dans une autre.
 La machine devient un simple programme 
-On utilse tous une JVM
+
 Il existe de nombreuses solutions :
 * VMware
 * Qemu
 * VirtualBox
-*
+* Virtual PC
+[[https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Diagramme_ArchiIsolateur.png/220px-Diagramme_ArchiIsolateur.png]]
+
+[NOTE.speaker]
+--
+On utilse tous une JVM
+--
+
 
 == les hypervirseurs
 
