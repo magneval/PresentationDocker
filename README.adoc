@@ -70,7 +70,7 @@ Il existe de nombreuses solutions :
 * VirtualBox
 * Virtual PC
 
-image::https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Diagramme_ArchiEmulateur.png/813px-Diagramme_ArchiEmulateur.png[canvas,size=contain]
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Diagramme_ArchiEmulateur.png/1169px-Diagramme_ArchiEmulateur.png[canvas,size=contain]
 
 [NOTE.speaker]
 --
@@ -84,7 +84,7 @@ image::https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Diagramme_Archi
 
 == l'approche containeur
 
-image::https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Diagramme_ArchiIsolateur.png/220px-Diagramme_ArchiIsolateur.png[canvas,size=contain]
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Diagramme_ArchiIsolateur.png/1169px-Diagramme_ArchiIsolateur.png[canvas,size=contain]
 
 == le cloud
 
