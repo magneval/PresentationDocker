@@ -70,7 +70,7 @@ Il existe de nombreuses solutions :
 * VirtualBox
 * Virtual PC
 
-image::https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Diagramme_ArchiIsolateur.png/220px-Diagramme_ArchiIsolateur.png
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Diagramme_ArchiIsolateur.png/220px-Diagramme_ArchiIsolateur.png[canvas,size=contain]
 
 [NOTE.speaker]
 --
