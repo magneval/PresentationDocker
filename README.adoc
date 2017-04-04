@@ -113,6 +113,13 @@ Solution basee sur des techniques existantes et eprouvees :
 
 Aproche legere
 
+Il s'appuie plutôt sur les fonctionnalités du noyau et utilise l'isolation de ressources :
+* le processeur,
+* la mémoire,
+* les entrées et sorties
+* les connexions réseau
+
+ainsi que des espaces de noms séparés pour isoler le système d'exploitation tel que vu par l'application
 
 
 == le cloud
