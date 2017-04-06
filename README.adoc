@@ -39,9 +39,15 @@ v1.0, 2016-01-10 +
 ** le stockage de masse
 ** le programme
 * la version 16 bits
-** pas le programme, l'OS
-** le reseau
 ** le multitache
+** le reseau
+** pas le programme, l'OS
+*** dos
+*** OS400
+*** Unix
+*** windows
+*** Linux
+*** Mac OS X
 
 [NOTE.speaker]
 --
@@ -52,9 +58,97 @@ standardisation
 
 == la virtualisation
 
+La migration IBM 360 vers IBM380 Oblige IBM a faire le premier emulateur.
+
+On peut faire tourner une machine dans une autre.+
+La machine devient un simple programme 
+
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Diagramme_ArchiEmulateur.png/1169px-Diagramme_ArchiEmulateur.png[canvas,size=contain]
+
+Il existe de nombreuses solutions :
+
+* VMware
+* Qemu
+* VirtualBox
+* Virtual PC
+
+[NOTE.speaker]
+--
+On utilse tous une JVM
+--
+
+
 == les hypervirseurs
 
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Diagramme_ArchiHyperviseur.png/1169px-Diagramme_ArchiHyperviseur.png[canvas,size=contain]
+L'approche est similaire, mais l'OS est allege pour permettre un acces plus rapide aux couches basse du systeme et donc ameliorer les performances. 
+
+Cette technique peut aussi etre aidee par des instructions special dans le coeur du processeur permettant un changement de contexte pour passer d'un OS a l'autre
+
+Les plus courrants sont :
+
+* VMware ESX serveur
+* Xen (Citrix)
+* Microsoft Hyper-V Server
+
+
 == l'approche containeur
+
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Diagramme_ArchiIsolateur.png/1169px-Diagramme_ArchiIsolateur.png[canvas,size=contain]
+Ici plus de couche intermediaires, on separe juste le programme des autres
+L'approche existe deouis longtemps :
+* chroot
+* BSD Jail
+* Zone Solaris 
+* LXC
+
+== Docker
+
+Solution basee sur des techniques existantes dans le noyau Linux et eprouvees :
+
+* LXC,
+* CGgroup,
+* vritualisaton du reseau,
+* UnionFS,
+* ...
+
+Aproche legere
+
+Il s'appuie plutôt sur les fonctionnalités du noyau et utilise l'isolation de ressources :
+* le processeur,
+* la mémoire,
+* les entrées et sorties
+* les connexions réseaux
+
+ainsi que des espaces de noms séparés pour isoler le système d'exploitation tel que vu par l'application
+
+Il peut tourner sous d'autre plate-forme comme MacOS X ou Windows (mais via une VM Linux)
+
+
+== Les bases de Docker
+
+Chaque "machine" se base sur une image d'un systeme Linux
+
+Cette image est compose d'une image disque basique agrementer d'actions d'installations complementaires.
+
+Le processus est definis par le "Docker file".
+
+une fois l'image generre, elle peut etre reutiliser autant de fois que souhaite par le principe du COW.
+
+Le Copy On Write, permet de ne faire une copie que de ce qui doit etre modifier et donc de reduire la taille de deux image differentes a la taille des fichiers modifies.
+
+Une meme image peut etre referencer dans la ceation de nombreux container
+
+Les couches d'images peuvent etre partage pour eviter de le recree a chaque fois.
+
+Le "Docker file" contient aussi la definitiion des ports reseau presente et des dossier partage entre le systeme hote et le container.
+
+
+== Docker Compose
+
+
+== Docker Swarm
+
 
 == le cloud
 
