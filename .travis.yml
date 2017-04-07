@@ -6,14 +6,20 @@ rvm:
 bundler_args: 
 
 before_install:
-  - mkdir -p output
-  - cd output ; git clone -b 3.3.0 --depth 1 https://github.com/hakimel/reveal.js.git; cd ..
+  - mkdir -p output/reveal.js
+  - git clone -b 3.3.0 --depth 1 https://github.com/hakimel/reveal.js.git
 
 script:
  - bundle exec asciidoctor-revealjs README.adoc -D output
 
 after_success:
-  - cd output ; mv README.html index.html ; cp -R ../images images
+  - cd output
+  - mv README.html index.html
+  - cp -R ../images images
+  - cp -R ../reveal.js/css reveal.js/
+  - cp -R ../reveal.js/js reveal.js/
+  - cp -R ../reveal.js/lib reveal.js/
+  - cp -R ../reveal.js/plugin reveal.js/
   - git init
   - git config user.name "${GH_USER_NAME}"
   - git config user.email "{GH_USER_EMAIL}"
