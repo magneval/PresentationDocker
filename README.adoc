@@ -18,9 +18,9 @@
 == Presentation Docker
 
 Charles de MAGNEVAL +
-<charles.de_magneval@open-groupe.com> +
-v1.0, 2016-01-10 +
-+
+charles.de_magneval@open-groupe.com +
+v1.0, 2017-04-10 +
+ +
 https://github.com/magneval/
 
 == Plan
@@ -65,14 +65,18 @@ standardisation
 
 == la virtualisation
 
-La migration IBM 36 vers IBM38 Oblige IBM a faire le premier emulateur.
++ La migration IBM 36 vers IBM38 Oblige IBM a faire le premier emulateur.
 
-On peut faire tourner une machine dans une autre.+
++ On peut faire tourner une machine dans une autre. +
 La machine devient un simple programme 
 
-image::https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Diagramme_ArchiEmulateur.png/1169px-Diagramme_ArchiEmulateur.png
+== la virtualisation
 
-Il existe de nombreuses solutions :
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Diagramme_ArchiEmulateur.png/1169px-Diagramme_ArchiEmulateur.png[canvas,size=contain]
+
+== la virtualisation
+
++Il existe de nombreuses solutions :
 
 * VMware
 * Qemu
@@ -84,13 +88,17 @@ Il existe de nombreuses solutions :
 On utilse tous une JVM
 --
 
-
 == les hypervirseurs
 
 image::https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Diagramme_ArchiHyperviseur.png/1169px-Diagramme_ArchiHyperviseur.png[canvas,size=contain]
+
+== les hypervirseurs
+
 L'approche est similaire, mais l'OS est allege pour permettre un acces plus rapide aux couches basse du systeme et donc ameliorer les performances. 
 
 Cette technique peut aussi etre aidee par des instructions special dans le coeur du processeur permettant un changement de contexte pour passer d'un OS a l'autre
+
+== les hypervirseurs
 
 Les plus courrants sont :
 
@@ -98,11 +106,18 @@ Les plus courrants sont :
 * Xen (Citrix)
 * Microsoft Hyper-V Server
 
+== l'approche containeur
+
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Diagramme_ArchiIsolateur.png/1169px-
 
 == l'approche containeur
 
-image::https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Diagramme_ArchiIsolateur.png/1169px-Diagramme_ArchiIsolateur.png[canvas,size=contain]
+Diagramme_ArchiIsolateur.png[canvas,size=contain]
+
+== l'approche containeur
+
 Ici plus de couche intermediaires, on separe juste le programme des autres
+
 L'approche existe deouis longtemps :
 * chroot
 * BSD Jail
