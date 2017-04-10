@@ -17,10 +17,11 @@
 
 == Presentation Docker
 
-Charles de MAGNEVAL <charles.de_magneval@open-groupe.com> +
+Charles de MAGNEVAL +
+<charles.de_magneval@open-groupe.com> +
 v1.0, 2016-01-10 +
-:toc: toc +
-:homepage: https://github.com/magneval/
++
+https://github.com/magneval/
 
 == Plan
 [%step]
@@ -31,16 +32,22 @@ v1.0, 2016-01-10 +
 * le cloud
 
 == Historique:
-[%step]
 * l'ordinateur 8 bits
+[%step]
 ** un processeur
 ** la ram
 ** la rom
 ** le stockage de masse
 ** le programme
+
+== Historique:
 * la version 16 bits
+[%step]
 ** le multitache
 ** le reseau
+** pas le programme, l'OS
+
+== Historique:
 ** pas le programme, l'OS
 *** dos
 *** OS400
@@ -58,12 +65,12 @@ standardisation
 
 == la virtualisation
 
-La migration IBM 360 vers IBM380 Oblige IBM a faire le premier emulateur.
+La migration IBM 36 vers IBM38 Oblige IBM a faire le premier emulateur.
 
 On peut faire tourner une machine dans une autre.+
 La machine devient un simple programme 
 
-image::https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Diagramme_ArchiEmulateur.png/1169px-Diagramme_ArchiEmulateur.png[canvas,size=contain]
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Diagramme_ArchiEmulateur.png/1169px-Diagramme_ArchiEmulateur.png
 
 Il existe de nombreuses solutions :
 
