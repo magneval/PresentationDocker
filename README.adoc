@@ -213,6 +213,8 @@ RUN unzip activiti.zip
 
 RUN cp activiti-5.19.0.2/wars/activiti-* /var/lib/tomcat8/webapps/
 ENV CATALINA_BASE /var/lib/tomcat8/
+VOLUME /exports
+
 CMD /usr/share/tomcat8/bin/catalina.sh  run
 --
 
@@ -220,6 +222,7 @@ CMD /usr/share/tomcat8/bin/catalina.sh  run
 --
 Les couches d'images peuvent etre partage pour eviter de le recree a chaque fois.
 Le "Docker file" contient aussi la definitiion des ports reseau presente et des dossier partage entre le systeme hote et le container.
+```ENTRYPOINT ["/usr/local/bin/nfs_setup"]```
 --
 
 == Docker Compose
