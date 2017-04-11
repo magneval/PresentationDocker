@@ -119,6 +119,7 @@ image::https://upload.wikimedia.org/wikipedia/commons/3/38/Diagramme_ArchiIsolat
 === l'approche containeur
 
 L'approche existe depuis longtemps :
+
 * chroot
 * BSD Jail
 * Zone Solaris 
@@ -126,7 +127,7 @@ L'approche existe depuis longtemps :
 
 == Docker
 
-=== Docker
+=== !
 
 Solution basee sur des techniques existantes dans le noyau Linux et eprouvees :
 
@@ -136,9 +137,7 @@ Solution basee sur des techniques existantes dans le noyau Linux et eprouvees :
 * UnionFS,
 * ...
 
-=== Docker
-
-Aproche legere
+=== Aproche legere
 
 Il s'appuie plutôt sur les fonctionnalités du noyau et utilise l'isolation de ressources :
 
@@ -149,9 +148,15 @@ Il s'appuie plutôt sur les fonctionnalités du noyau et utilise l'isolation de 
 
 === Docker
 
-ainsi que des espaces de noms séparés pour isoler le système d'exploitation tel que vu par l'application
+gestion des espaces de noms séparés pour isoler le système d'exploitation tel que vu par l'application
 
 Il peut tourner sous d'autre plate-forme comme MacOS X ou Windows (mais via une VM Linux)
+
+=== Les briques de Docker
+
+* Le registry
+* Les Images
+* Les containers
 
 === Les bases de Docker
 
@@ -160,12 +165,6 @@ Chaque "machine" se base sur une image d'un systeme Linux
 Cette image est compose d'une image disque basique agrementer d'actions d'installations complementaires.
 
 Le processus est definis par le "Docker file".
-
-=== Les briques de Docker
-
-* Le registry
-* Les Images
-* Les containers
 
 === Les bases de Docker
 
