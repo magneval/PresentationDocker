@@ -34,22 +34,19 @@ https://github.com/magneval/
 == Historique
 
 
-=== Historique:
-
-* l'ordinateur 8 bits
+=== l'ordinateur 8 bits
 [%step]
-** un processeur
-** la ram
-** la rom
-** le stockage de masse
-** le programme
+* un processeur
+* la ram
+* la rom
+* le stockage de masse
+* le programme
 
-=== Historique:
-* la version 16 bits
+=== la version 16 bits
 [%step]
-** le multitache
-** le reseau
-** pas un programme, un OS
+* le multitache
+* le reseau
+* pas un programme, un OS
 
 === les OS
 * dos
