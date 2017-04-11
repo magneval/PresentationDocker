@@ -23,7 +23,7 @@ v1.0, 2017-04-10 +
  +
 https://github.com/magneval/
 
-== Plan
+=== Plan
 [%step]
 * historique
 * la virtualisation
@@ -31,10 +31,10 @@ https://github.com/magneval/
 * l'approche containeur
 * le cloud
 
-= Historique:
+== Historique
 
 
-== Historique:
+=== Historique:
 
 * l'ordinateur 8 bits
 [%step]
@@ -44,14 +44,14 @@ https://github.com/magneval/
 ** le stockage de masse
 ** le programme
 
-== Historique:
+=== Historique:
 * la version 16 bits
 [%step]
 ** le multitache
 ** le reseau
 ** pas un programme, un OS
 
-== les OS
+=== les OS
 * dos
 * OS400
 * Unix
@@ -66,20 +66,20 @@ drivers +
 standardisation
 --
 
-= la virtualisation
-
 == la virtualisation
+
+=== la virtualisation
 
 * La migration IBM 36 vers IBM38 Oblige IBM a faire le premier emulateur.
 
 * On peut faire tourner une machine dans une autre. +
 La machine devient un simple programme 
 
-== !
+=== !
 
 image::https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Diagramme_ArchiEmulateur.png/1169px-Diagramme_ArchiEmulateur.png[canvas,size=contain]
 
-== la virtualisation
+=== la virtualisation
 
 Il existe de nombreuses solutions :
 
@@ -93,17 +93,17 @@ Il existe de nombreuses solutions :
 On utilse tous une JVM
 --
 
-== les hypervirseurs
+=== les hypervirseurs
 
 * L'approche est similaire, mais l'OS est allege pour permettre un acces plus rapide aux couches basse du systeme et donc ameliorer les performances. 
 
 * Cette technique peut aussi etre aidee par des instructions special dans le coeur du processeur permettant un changement de contexte pour passer d'un OS a l'autre
 
-== !
+=== !
 
 image::https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Diagramme_ArchiHyperviseur.png/1169px-Diagramme_ArchiHyperviseur.png[canvas,size=contain]
 
-== les hypervirseurs
+=== les hypervirseurs
 
 Les plus courrants sont :
 
@@ -111,15 +111,15 @@ Les plus courrants sont :
 * Xen (Citrix)
 * Microsoft Hyper-V Server
 
-== l'approche containeur
+=== l'approche containeur
 
 Ici plus de couche intermediaires, on separe juste le programme des autres
 
-== !
+=== !
 
 image::https://upload.wikimedia.org/wikipedia/commons/3/38/Diagramme_ArchiIsolateur.png[canvas,size=contain]
 
-== l'approche containeur
+=== l'approche containeur
 
 L'approche existe depuis longtemps :
 * chroot
@@ -127,9 +127,9 @@ L'approche existe depuis longtemps :
 * Zone Solaris 
 * LXC
 
-= Docker
-
 == Docker
+
+=== Docker
 
 Solution basee sur des techniques existantes dans le noyau Linux et eprouvees :
 
@@ -139,7 +139,7 @@ Solution basee sur des techniques existantes dans le noyau Linux et eprouvees :
 * UnionFS,
 * ...
 
-== Docker
+=== Docker
 
 Aproche legere
 
@@ -150,14 +150,13 @@ Il s'appuie plutôt sur les fonctionnalités du noyau et utilise l'isolation de 
 * les entrées et sorties
 * les connexions réseaux
 
-== Docker
+=== Docker
 
 ainsi que des espaces de noms séparés pour isoler le système d'exploitation tel que vu par l'application
 
 Il peut tourner sous d'autre plate-forme comme MacOS X ou Windows (mais via une VM Linux)
 
-
-== Les bases de Docker
+=== Les bases de Docker
 
 Chaque "machine" se base sur une image d'un systeme Linux
 
@@ -165,13 +164,13 @@ Cette image est compose d'une image disque basique agrementer d'actions d'instal
 
 Le processus est definis par le "Docker file".
 
-== Les briques de Docker
+=== Les briques de Docker
 
 * Le registry
 * Les Images
 * Les containers
 
-== Les bases de Docker
+=== Les bases de Docker
 
 Une fois l'image generre, elle peut etre reutiliser autant de fois que souhaite par le principe du COW.
 
@@ -179,7 +178,7 @@ Le Copy On Write, permet de ne faire une copie que de ce qui doit etre modifier 
 
 Une même image peut etre referencer dans la ceation de nombreux container
 
-== Docker
+=== Docker
 
 Les couches d'images peuvent etre partage pour eviter de le recree a chaque fois.
 
