@@ -33,7 +33,6 @@ https://github.com/magneval/
 
 == Historique
 
-
 === l'ordinateur 8 bits
 [%step]
 * un processeur
@@ -169,8 +168,14 @@ Il peut tourner sous d'autre plate-forme comme MacOS X ou Windows (mais via une 
 === Docker Images
 
 * ensembles de couches contenant le systeme de fichier
-* compose a partir de couches de bases
+* compose a partir
+** de couches de bases
+** d'action 
 * creer a partir de docker file
+* Contient aussi :
+** les services reseaux (ports ouvert)
+** Les dossiers Partages
+** Le Programme
 
 [NOTE.speaker]
 --
