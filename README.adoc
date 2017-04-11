@@ -183,6 +183,7 @@ Le processus est definis par le "Docker file".
 === Le Docker File
 
 Contient :
+
 * l'image de base
 * la configuration
 * les services reseaux (ports ouvert)
