@@ -70,6 +70,10 @@ standardisation
 + On peut faire tourner une machine dans une autre. +
 La machine devient un simple programme 
 
+== !
+
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Diagramme_ArchiEmulateur.png/1169px-Diagramme_ArchiEmulateur.png[canvas,size=contain]
+
 == la virtualisation
 
 +Il existe de nombreuses solutions :
@@ -84,15 +88,15 @@ La machine devient un simple programme
 On utilse tous une JVM
 --
 
-== !
-
-image::https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Diagramme_ArchiEmulateur.png/1169px-Diagramme_ArchiEmulateur.png[canvas,size=contain]
-
 == les hypervirseurs
 
 L'approche est similaire, mais l'OS est allege pour permettre un acces plus rapide aux couches basse du systeme et donc ameliorer les performances. 
 
 Cette technique peut aussi etre aidee par des instructions special dans le coeur du processeur permettant un changement de contexte pour passer d'un OS a l'autre
+
+== !
+
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Diagramme_ArchiHyperviseur.png/1169px-Diagramme_ArchiHyperviseur.png[canvas,size=contain]
 
 == les hypervirseurs
 
@@ -102,27 +106,21 @@ Les plus courrants sont :
 * Xen (Citrix)
 * Microsoft Hyper-V Server
 
-== !
-
-image::https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Diagramme_ArchiHyperviseur.png/1169px-Diagramme_ArchiHyperviseur.png[canvas,size=contain]
-
-== l'approche containeur
-
-Diagramme_ArchiIsolateur.png[canvas,size=contain]
-
 == l'approche containeur
 
 Ici plus de couche intermediaires, on separe juste le programme des autres
 
-L'approche existe deouis longtemps :
+== !
+
+image::https://upload.wikimedia.org/wikipedia/commons/3/38/Diagramme_ArchiIsolateur.png[canvas,size=contain]
+
+== l'approche containeur
+
+L'approche existe depuis longtemps :
 * chroot
 * BSD Jail
 * Zone Solaris 
 * LXC
-
-== !
-
-image::https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Diagramme_ArchiIsolateur.png/1169px-
 
 == Docker
 
