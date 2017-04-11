@@ -172,10 +172,7 @@ Il peut tourner sous d'autre plate-forme comme MacOS X ou Windows (mais via une 
 ** de couches de bases
 ** d'action 
 * creer a partir de docker file
-* Contient aussi :
-** les services reseaux (ports ouvert)
-** Les dossiers Partages
-** Le Programme
+* utilisation du copy-on-write
 
 [NOTE.speaker]
 --
@@ -183,13 +180,21 @@ Cette image est compose d'une image disque basique agrementer d'actions d'instal
 Le processus est definis par le "Docker file".
 --
 
-=== Les bases de Docker
+=== Le Docker File
 
+Contient :
+* l'image de base
+* la configuration
+* les services reseaux (ports ouvert)
+* Les dossiers Partages
+* Le Programme lancer dans le container
+
+[NOTE.speaker]
+--
 Une fois l'image generre, elle peut etre reutiliser autant de fois que souhaite par le principe du COW.
-
 Le Copy On Write, permet de ne faire une copie que de ce qui doit etre modifier et donc de reduire la taille de deux image differentes a la taille des fichiers modifies.
-
 Une même image peut etre referencer dans la ceation de nombreux container
+--
 
 === Docker
 
