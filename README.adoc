@@ -158,13 +158,25 @@ Il peut tourner sous d'autre plate-forme comme MacOS X ou Windows (mais via une 
 * Les Images
 * Les containers
 
-=== Les bases de Docker
+=== Docker Registry
 
-Chaque "machine" se base sur une image d'un systeme Linux
+* Centralisation des images
 
+* possibilite de :
+** puller
+** pusher
+
+=== Docker Images
+
+* ensembles de couches contenant le systeme de fichier
+* compose a partir de couches de bases
+* creer a partir de docker file
+
+[NOTE.speaker]
+--
 Cette image est compose d'une image disque basique agrementer d'actions d'installations complementaires.
-
 Le processus est definis par le "Docker file".
+--
 
 === Les bases de Docker
 
