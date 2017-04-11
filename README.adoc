@@ -72,10 +72,6 @@ La machine devient un simple programme
 
 == la virtualisation
 
-image::https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Diagramme_ArchiEmulateur.png/1169px-Diagramme_ArchiEmulateur.png[canvas,size=contain]
-
-== la virtualisation
-
 +Il existe de nombreuses solutions :
 
 * VMware
@@ -88,9 +84,9 @@ image::https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Diagramme_Archi
 On utilse tous une JVM
 --
 
-== les hypervirseurs
+== !
 
-image::https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Diagramme_ArchiHyperviseur.png/1169px-Diagramme_ArchiHyperviseur.png[canvas,size=contain]
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/5/5c/Diagramme_ArchiEmulateur.png/1169px-Diagramme_ArchiEmulateur.png[canvas,size=contain]
 
 == les hypervirseurs
 
@@ -106,9 +102,9 @@ Les plus courrants sont :
 * Xen (Citrix)
 * Microsoft Hyper-V Server
 
-== l'approche containeur
+== !
 
-image::https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Diagramme_ArchiIsolateur.png/1169px-
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/f/fa/Diagramme_ArchiHyperviseur.png/1169px-Diagramme_ArchiHyperviseur.png[canvas,size=contain]
 
 == l'approche containeur
 
@@ -123,6 +119,10 @@ L'approche existe deouis longtemps :
 * BSD Jail
 * Zone Solaris 
 * LXC
+
+== !
+
+image::https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/Diagramme_ArchiIsolateur.png/1169px-
 
 == Docker
 
