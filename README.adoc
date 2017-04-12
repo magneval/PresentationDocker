@@ -229,29 +229,27 @@ Le "Docker file" contient aussi la définition des ports réseau présenté et d
 == les commandes Docker
 
 pour la gestion des images
-```
-    search::
-    Search for an image on the Docker Hub
-    build::
-    Build an image from a Dockerfile
-    tag::
-    Tag an image into a repository
-    push::
-    Push an image or a repository to a Docker registry server
-    pull::
-    Pull an image or a repository from a Docker registry server
-    commit::
-    Create a new image from a container's changes
-    save::
-    Save an image to a tar archive
-    load::
-    Load an image from a tar archive
-    history::
-    Show the history of an image
-    rmi::
-    emove one or more images
-    
-```
+
+search::
+Search for an image on the Docker Hub
+build::
+Build an image from a Dockerfile
+tag::
+Tag an image into a repository
+push::
+Push an image or a repository to a Docker registry server
+pull::
+Pull an image or a repository from a Docker registry server
+commit::
+Create a new image from a container's changes
+save::
+Save an image to a tar archive
+load::
+Load an image from a tar archive
+history::
+Show the history of an image
+rmi::
+Remove one or more images
 
 [NOTE.speaker]
 --
