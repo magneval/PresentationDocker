@@ -6,6 +6,7 @@
 :revealjs_mouseWheel: true
 :revealjs_history: true
 :revealjs_hideAddressBar: true
+:imagesdir: ./images
 
 
 = Présentation VM Docker
