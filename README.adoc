@@ -228,7 +228,7 @@ Le "Docker file" contient aussi la définition des ports réseau présenté et d
 
 == les commandes Docker
 
-pour la gestion des images
+=== la gestion des images
 
 search::
 Search for an image on the Docker Hub
@@ -240,8 +240,8 @@ push::
 Push an image or a repository to a Docker registry server
 pull::
 Pull an image or a repository from a Docker registry server
-commit::
-Create a new image from a container's changes
+images::
+List images
 save::
 Save an image to a tar archive
 load::
@@ -251,29 +251,47 @@ Show the history of an image
 rmi::
 Remove one or more images
 
+=== pour les instances
+
+run::
+Run a command in a new container
+exec::
+Run a command in an existing container
+ps::
+List containers
+port::
+Lookup the public-facing port that is NAT-ed to PRIVATE_PORT
+cp::
+Copy files/folders from a container's filesystem to the host path
+attach::
+Attach to a running container
+stop::
+Stop a running container
+commit::
+Create a new image from a container's changes
+start::
+Start a stopped container
+kill::
+Kill a running container
+rm::
+Remove one or more containers
+
+
+
 [NOTE.speaker]
 --
-    attach    Attach to a running container
-    cp        Copy files/folders from a container's filesystem to the host path
     create    Create a new container
     diff      Inspect changes on a container's filesystem
     events    Get real time events from the server
-    exec      Run a command in an existing container
     export    Stream the contents of a container as a tar archive
-    images    List images
     import    Create a new filesystem image from the contents of a tarball
     info      Display system-wide information
     inspect   Return low-level information on a container
-    kill      Kill a running container
     login     Register or log in to a Docker registry server
     logout    Log out from a Docker registry server
     logs      Fetch the logs of a container
-    port      Lookup the public-facing port that is NAT-ed to PRIVATE_PORT
     pause     Pause all processes within a container
-    ps        List containers
     restart   Restart a running container
-    rm        Remove one or more containers
-    run       Run a command in a new container
     start     Start a stopped container
     stop      Stop a running container
     top       Lookup the running processes of a container
