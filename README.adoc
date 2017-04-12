@@ -319,7 +319,7 @@ Remove one or more containers
 
 === !
 
-image::images/commandes-docker.gif[canvas,size=contain]
+image::commandes-docker.gif[canvas,size=contain]
 
 
 == Docker Compose
