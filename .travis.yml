@@ -16,6 +16,7 @@ after_success:
   - cd output
   - mv README.html index.html
   - cp -R ../images images
+  - cp -R ../docs docs
   - cp -R ../reveal.js/css reveal.js/
   - cp -R ../reveal.js/js reveal.js/
   - cp -R ../reveal.js/lib reveal.js/
