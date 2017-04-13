@@ -475,4 +475,19 @@ Update a node
 
 == le cloud
 
+* cloud.docker.com
+* codeship.com
+* Amazon Web Services
+* Microsoft Azure
+* Digital Ocean
+* Exoscale
+* Google Compute Engine
+* OpenStack
+* Rackspace
+* IBM Softlayer
+
+[NOTE.speaker]
+--
+https://blog.codeship.com/the-shortlist-of-docker-hosting/
+--
 
