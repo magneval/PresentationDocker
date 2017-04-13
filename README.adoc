@@ -229,7 +229,7 @@ Le "Docker file" contient aussi la définition des ports réseau présenté et d
 == les commandes Docker
 
 === la gestion des images
-
+[%step]
 search::
 Search for an image on the Docker Hub
 build::
@@ -240,7 +240,7 @@ history::
 Show the history of an image
 
 === la gestion des images
-
+[%step]
 push::
 Push an image or a repository to a Docker registry server
 pull::
@@ -249,7 +249,7 @@ images::
 List images
 
 === la gestion des images
-
+[%step]
 save::
 Save an image to a tar archive
 load::
@@ -258,7 +258,7 @@ rmi::
 Remove one or more images
 
 === pour les instances
-
+[%step]
 run::
 Run a command in a new container
 exec::
@@ -269,7 +269,7 @@ top::
 Lookup the running processes of a container
 
 === pour les instances
-
+[%step]
 port::
 Lookup the public-facing port that is NAT-ed to PRIVATE_PORT
 cp::
@@ -278,7 +278,7 @@ attach::
 Attach to a running container
 
 === pour les instances
-
+[%step]
 commit::
 Create a new image from a container's changes
 stop::
@@ -289,7 +289,7 @@ restart::
 Restart a running container
 
 === pour les instances
-
+[%step]
 pause::
 Pause all processes within a container
 unpause::
@@ -388,7 +388,7 @@ services:
 --
 
 === Commandes
-
+[%step]
 build::
 Build or rebuild services
 bundle::
@@ -440,6 +440,37 @@ Show::
 the Docker-Compose version information
 
 == Docker Swarm
+
+=== command Swarm
+[%step]
+init::
+Initialize a swarm
+join::
+Join a swarm as a node and/or manager
+join-token::
+Manage join tokens
+update::
+Update the swarm
+leave::
+Leave the swarm (workers only)
+
+
+=== command Node
+[%step]
+demote::
+Demote one or more nodes from manager in the swarm
+inspect::
+Display detailed information on one or more nodes
+ls::
+List nodes in the swarm
+promote::
+Promote one or more nodes to manager in the swarm
+rm::
+Remove one or more nodes from the swarm
+ps::
+List tasks running on a node
+update::
+Update a node
 
 
 == le cloud
