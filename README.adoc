@@ -485,6 +485,7 @@ Update a node
 * OpenStack
 * Rackspace
 * IBM Softlayer
+* Heroku
 
 [NOTE.speaker]
 --
