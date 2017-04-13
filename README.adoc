@@ -303,6 +303,48 @@ Remove one or more containers
 
 [NOTE.speaker]
 --
+version Docker
+  docker version
+informations sur docker
+  docker info
+visualiser les containers en cours d'éxécution
+  docker ps
+lancement du container en mode daemon sur des ports d'écoutes
+  docker run --name container_name -p 40080:80 -p 33061:3306 -d image_name
+connexion sur un container
+  docker exec -it container_name /bin/bash
+lancement d'un container avec le mode restart
+  docker run --restart=always --name container_name -p 127.0.0.1:40080:80/tcp -d image_name
+arrêt et supression d'un container
+  docker stop container_name; docker rm container_name
+sauvegarde d'un container en image
+  docker commit container_name image_name
+visualsation des containers en exécution
+  docker ps -a
+sauvegarde et restauration des images
+  docker save -o <save image to path> <image name>
+  docker load -i <path to image tar file>
+push et pull sur un repository local
+  docker tag nginx localhost:5000/nginx
+  docker push localhost:5000/nginx
+  docker pull docker.somehost.com:5000/nginx
+builder les images
+  docker build -t image_name -f Dockerfile .
+détails sur les images
+  docker inspect image_name
+effacer les images avec le tag "none"
+  docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
+effacer les containers qui ont été stoppés
+  docker rm $(docker ps -q -f status=exited)docker rm $(docker ps -q -f status=exited)
+--
+
+=== !
+
+image::commandes-docker.gif[canvas,size=contain]
+
+
+[NOTE.speaker]
+--
     create    Create a new container
     diff      Inspect changes on a container's filesystem
     events    Get real time events from the server
@@ -316,11 +358,6 @@ Remove one or more containers
     version   Show the Docker version information
     wait      Block until a container stops, then print its exit code
 --
-
-=== !
-
-image::commandes-docker.gif[canvas,size=contain]
-
 
 == Docker Compose
 
