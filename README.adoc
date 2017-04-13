@@ -200,9 +200,9 @@ Une même image peut être référencer dans la création de nombreux container
 
 === Exemple de Docker File
 
-[source, docker, numbered]
+[source, DockerFile, numbered]
 --
-FROM magneval/openjdk8
+magneval/openjdk8
 
 MAINTAINER magneval
 
@@ -363,7 +363,7 @@ image::commandes-docker.gif[canvas,size=contain]
 
 === Exemple
 
-[source, docker, numbered]
+[source, DockerFile, numbered]
 --
 version: "2"
 
