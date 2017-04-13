@@ -361,7 +361,28 @@ image::commandes-docker.gif[canvas,size=contain]
 
 == Docker Compose
 
+```
+version: "2"
 
+services:
+ mysql:
+  container_name: mysql-sb
+  ports:
+   - "3306:3306"
+  environment:
+   MYSQL_ROOT_PASSWORD: root
+   MYSQL_USER: dev
+   MYSQL_PASSWORD: 123456
+   MYSQL_DATABASE: springbootdb
+
+ ihm:
+  image: demo/springboot-mysql:0.0.1
+  container_name: front
+  ports:
+   - "8085:8080"
+  links:
+   - mysql
+```
 == Docker Swarm
 
 
