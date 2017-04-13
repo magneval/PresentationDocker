@@ -361,7 +361,8 @@ image::commandes-docker.gif[canvas,size=contain]
 
 == Docker Compose
 
-```
+[source, docker, numbered]
+--
 version: "2"
 
 services:
@@ -382,7 +383,8 @@ services:
    - "8085:8080"
   links:
    - mysql
-```
+---
+
 == Docker Swarm
 
 
