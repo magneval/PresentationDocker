@@ -74,7 +74,7 @@ La machine devient un simple programme
 
 === !
 
-image::https://upload.wikimedia.org/wikipedia/commons/5/5c/Diagramme_ArchiEmulateur.png[canvas,size=contain]
+image::Diagramme_ArchiEmulateur.png[canvas,size=contain]
 
 === la virtualisation
 
@@ -98,7 +98,7 @@ On utilise tous une JVM
 
 === !
 
-image::https://upload.wikimedia.org/wikipedia/commons/f/fa/Diagramme_ArchiHyperviseur.png[canvas,size=contain]
+image::Diagramme_ArchiHyperviseur.png[canvas,size=contain]
 
 === les hypervirseurs
 
@@ -114,7 +114,7 @@ Ici plus de couche intermédiaires, on sépare juste le programme des autres
 
 === !
 
-image::https://upload.wikimedia.org/wikipedia/commons/3/38/Diagramme_ArchiIsolateur.png[canvas,size=contain]
+image::Diagramme_ArchiIsolateur.png[canvas,size=contain]
 
 === l'approche container
 
