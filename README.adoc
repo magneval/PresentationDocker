@@ -370,7 +370,9 @@ services:
    - "3306:3306"
   environment:
    MYSQL_DATABASE: springbootdb
-
+  volumes:
+    - web-logs:/var/log/mysql
+    
  ihm:
   image: demo/springboot-mysql:0.0.1
   container_name: front
