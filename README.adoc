@@ -6,6 +6,7 @@
 :revealjs_mouseWheel: true
 :revealjs_history: true
 :revealjs_hideAddressBar: true
+:imagesdir: ./images
 
 
 = Présentation VM Docker
@@ -199,9 +200,9 @@ Une même image peut être référencer dans la création de nombreux container
 
 === Exemple de Docker File
 
-[source, docker, numbered]
+[source, DockerFile, numbered]
 --
-FROM magneval/openjdk8
+magneval/openjdk8
 
 MAINTAINER magneval
 
@@ -227,57 +228,267 @@ Le "Docker file" contient aussi la définition des ports réseau présenté et d
 
 == les commandes Docker
 
-pour la gestion des images
-```
-    search    Search for an image on the Docker Hub
-    build     Build an image from a Dockerfile
-    tag       Tag an image into a repository
-    push      Push an image or a repository to a Docker registry server
-    pull      Pull an image or a repository from a Docker registry server
-    commit    Create a new image from a container's changes
-    save      Save an image to a tar archive
-    load      Load an image from a tar archive
-    history   Show the history of an image
-    rmi       Remove one or more images
-    
-```
+=== la gestion des images
+[%step]
+search::
+Search for an image on the Docker Hub
+build::
+Build an image from a Dockerfile
+tag::
+Tag an image into a repository
+history::
+Show the history of an image
+
+=== la gestion des images
+[%step]
+push::
+Push an image or a repository to a Docker registry server
+pull::
+Pull an image or a repository from a Docker registry server
+images::
+List images
+
+=== la gestion des images
+[%step]
+save::
+Save an image to a tar archive
+load::
+Load an image from a tar archive
+rmi::
+Remove one or more images
+
+=== pour les instances
+[%step]
+run::
+Run a command in a new container
+exec::
+Run a command in an existing container
+ps::
+List containers
+top::
+Lookup the running processes of a container
+
+=== pour les instances
+[%step]
+port::
+Lookup the public-facing port that is NAT-ed to PRIVATE_PORT
+cp::
+Copy files/folders from a container's filesystem to the host path
+attach::
+Attach to a running container
+
+=== pour les instances
+[%step]
+commit::
+Create a new image from a container's changes
+stop::
+Stop a running container
+start::
+Start a stopped container
+restart::
+Restart a running container
+
+=== pour les instances
+[%step]
+pause::
+Pause all processes within a container
+unpause::
+Unpause a paused container
+kill::
+Kill a running container
+rm::
+Remove one or more containers
+
+
 
 [NOTE.speaker]
 --
-    attach    Attach to a running container
-    cp        Copy files/folders from a container's filesystem to the host path
+version Docker
+  docker version
+informations sur docker
+  docker info
+visualiser les containers en cours d'éxécution
+  docker ps
+lancement du container en mode daemon sur des ports d'écoutes
+  docker run --name container_name -p 40080:80 -p 33061:3306 -d image_name
+connexion sur un container
+  docker exec -it container_name /bin/bash
+lancement d'un container avec le mode restart
+  docker run --restart=always --name container_name -p 127.0.0.1:40080:80/tcp -d image_name
+arrêt et supression d'un container
+  docker stop container_name; docker rm container_name
+sauvegarde d'un container en image
+  docker commit container_name image_name
+visualsation des containers en exécution
+  docker ps -a
+sauvegarde et restauration des images
+  docker save -o <save image to path> <image name>
+  docker load -i <path to image tar file>
+push et pull sur un repository local
+  docker tag nginx localhost:5000/nginx
+  docker push localhost:5000/nginx
+  docker pull docker.somehost.com:5000/nginx
+builder les images
+  docker build -t image_name -f Dockerfile .
+détails sur les images
+  docker inspect image_name
+effacer les images avec le tag "none"
+  docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
+effacer les containers qui ont été stoppés
+  docker rm $(docker ps -q -f status=exited)docker rm $(docker ps -q -f status=exited)
+--
+
+=== !
+
+image::commandes-docker.gif[canvas,size=contain]
+
+
+[NOTE.speaker]
+--
     create    Create a new container
     diff      Inspect changes on a container's filesystem
     events    Get real time events from the server
-    exec      Run a command in an existing container
     export    Stream the contents of a container as a tar archive
-    images    List images
     import    Create a new filesystem image from the contents of a tarball
     info      Display system-wide information
     inspect   Return low-level information on a container
-    kill      Kill a running container
     login     Register or log in to a Docker registry server
     logout    Log out from a Docker registry server
     logs      Fetch the logs of a container
-    port      Lookup the public-facing port that is NAT-ed to PRIVATE_PORT
-    pause     Pause all processes within a container
-    ps        List containers
-    restart   Restart a running container
-    rm        Remove one or more containers
-    run       Run a command in a new container
-    start     Start a stopped container
-    stop      Stop a running container
-    top       Lookup the running processes of a container
-    unpause   Unpause a paused container
     version   Show the Docker version information
     wait      Block until a container stops, then print its exit code
 --
+
 == Docker Compose
 
+=== Exemple
+
+[source, DockerFile, numbered]
+--
+version: "2"
+
+services:
+ mysql:
+  container_name: mysql-sb
+  ports:
+   - "3306:3306"
+  environment:
+   MYSQL_ROOT_PASSWORD: root
+   MYSQL_USER: dev
+   MYSQL_PASSWORD: 123456
+   MYSQL_DATABASE: springbootdb
+
+ ihm:
+  image: demo/springboot-mysql:0.0.1
+  container_name: front
+  ports:
+   - "8085:8080"
+  links:
+   - mysql
+--
+
+=== Commandes
+[%step]
+build::
+Build or rebuild services
+bundle::
+Generate a Docker bundle from the Compose file
+config::
+Validate and view the compose file
+create::
+Create services
+down::
+Stop and remove containers, networks, images, and volumes
+events::
+Receive real time events from containers
+exec::
+Execute a command in a running container
+help::
+Get help on a command
+kill::
+Kill containers
+logs::
+View output from containers
+pause::
+Pause services
+port::
+Print the public port for a port binding
+ps::
+List containers
+pull::
+Pull service images
+push::
+Push service images
+restart::
+Restart services
+rm::
+Remove stopped containers
+run::
+Run a one-off command
+scale::
+Set number of containers for a service
+start::
+Start services
+stop::
+Stop services
+unpause::
+Unpause services
+up::
+Create and start containers
+version::
+Show::
+the Docker-Compose version information
 
 == Docker Swarm
+
+=== command Swarm
+[%step]
+init::
+Initialize a swarm
+join::
+Join a swarm as a node and/or manager
+join-token::
+Manage join tokens
+update::
+Update the swarm
+leave::
+Leave the swarm (workers only)
+
+
+=== command Node
+[%step]
+demote::
+Demote one or more nodes from manager in the swarm
+inspect::
+Display detailed information on one or more nodes
+ls::
+List nodes in the swarm
+promote::
+Promote one or more nodes to manager in the swarm
+rm::
+Remove one or more nodes from the swarm
+ps::
+List tasks running on a node
+update::
+Update a node
 
 
 == le cloud
 
+* cloud.docker.com
+* codeship.com
+* Amazon Web Services
+* Microsoft Azure
+* Digital Ocean
+* Exoscale
+* Google Compute Engine
+* OpenStack
+* Rackspace
+* IBM Softlayer
+* Heroku
+
+[NOTE.speaker]
+--
+https://blog.codeship.com/the-shortlist-of-docker-hosting/
+--
 
