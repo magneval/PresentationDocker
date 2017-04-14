@@ -7,7 +7,7 @@
 :revealjs_history: true
 :revealjs_hideAddressBar: true
 :imagesdir: ./images
-
+:source-highlighter: highlightjs
 
 = Présentation VM Docker
 
