@@ -345,7 +345,7 @@ image::commandes-docker.gif[canvas,size=contain]
 
 === Exemple
 
-[source, DockerFile, numbered]
+[source, YAML, numbered]
 --
 include::docker-compose.yml[]
 --
