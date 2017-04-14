@@ -230,14 +230,14 @@ Le "Docker file" contient aussi la définition des ports réseau présenté et d
 
 === la gestion des images
 [%step]
-search::
-Search for an image on the Docker Hub
-build::
-Build an image from a Dockerfile
-tag::
-Tag an image into a repository
-history::
-Show the history of an image
+Recherche une image sur Docker Hub::
+docker search jdk
+builder les images::
+`docker build -t image_name -f Dockerfile .`
+tag une image sur le repository::
+docker tag nginx localhost:5000/nginx
+Affiche l'historique d'une image::
+docker history dvckzasc03.rouen.francetelecom.fr:5000/pli/portainer/portainer
 
 === la gestion des images
 [%step]
@@ -254,8 +254,8 @@ save::
 Save an image to a tar archive
 load::
 Load an image from a tar archive
-rmi::
-Remove one or more images
+effacer les images avec le tag "none"::
+`docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")`
 
 === pour les instances
 [%step]
@@ -328,12 +328,8 @@ push et pull sur un repository local
   docker tag nginx localhost:5000/nginx
   docker push localhost:5000/nginx
   docker pull docker.somehost.com:5000/nginx
-builder les images
-  docker build -t image_name -f Dockerfile .
 détails sur les images
   docker inspect image_name
-effacer les images avec le tag "none"
-  docker rmi -f $(docker images | grep "<none>" | awk "{print \$3}")
 effacer les containers qui ont été stoppés
   docker rm $(docker ps -q -f status=exited)docker rm $(docker ps -q -f status=exited)
 --
