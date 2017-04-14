@@ -369,9 +369,6 @@ services:
   ports:
    - "3306:3306"
   environment:
-   MYSQL_ROOT_PASSWORD: root
-   MYSQL_USER: dev
-   MYSQL_PASSWORD: 123456
    MYSQL_DATABASE: springbootdb
 
  ihm:
@@ -384,6 +381,7 @@ services:
 --
 
 === Commandes
+
 [%step]
 build::
 Build or rebuild services
@@ -393,16 +391,22 @@ config::
 Validate and view the compose file
 create::
 Create services
+
+=== Commandes
+
+[%step]
 down::
 Stop and remove containers, networks, images, and volumes
 events::
 Receive real time events from containers
 exec::
 Execute a command in a running container
-help::
-Get help on a command
 kill::
 Kill containers
+
+=== Commandes
+
+[%step]
 logs::
 View output from containers
 pause::
@@ -411,6 +415,10 @@ port::
 Print the public port for a port binding
 ps::
 List containers
+
+=== Commandes
+
+[%step]
 pull::
 Pull service images
 push::
@@ -419,6 +427,10 @@ restart::
 Restart services
 rm::
 Remove stopped containers
+
+=== Commandes
+
+[%step]
 run::
 Run a one-off command
 scale::
@@ -427,6 +439,10 @@ start::
 Start services
 stop::
 Stop services
+
+=== Commandes
+
+[%step]
 unpause::
 Unpause services
 up::
@@ -438,6 +454,7 @@ the Docker-Compose version information
 == Docker Swarm
 
 === command Swarm
+
 [%step]
 init::
 Initialize a swarm
@@ -447,11 +464,15 @@ join-token::
 Manage join tokens
 update::
 Update the swarm
+
+=== command Swarm
+
+[%step]
 leave::
 Leave the swarm (workers only)
 
-
 === command Node
+
 [%step]
 demote::
 Demote one or more nodes from manager in the swarm
@@ -461,13 +482,16 @@ ls::
 List nodes in the swarm
 promote::
 Promote one or more nodes to manager in the swarm
+
+=== command Node
+
+[%step]
 rm::
 Remove one or more nodes from the swarm
 ps::
 List tasks running on a node
 update::
 Update a node
-
 
 == le cloud
 
@@ -477,6 +501,9 @@ Update a node
 * Microsoft Azure
 * Digital Ocean
 * Exoscale
+
+== le cloud
+
 * Google Compute Engine
 * OpenStack
 * Rackspace
