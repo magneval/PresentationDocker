@@ -15,7 +15,7 @@ script:
 after_success:
   - cd output
   - mv README.html index.html
-  - sed -n '/est/p' index.html >client.html
+  - sed -n '/dependencies: [/dependencies: [\n		{ src: 'socket.io/socket.io.js', async: true },\n' index.html >client.html
   - cp -R ../images images
   - cp -R ../docs docs
   - cp -R ../reveal.js/css reveal.js/
