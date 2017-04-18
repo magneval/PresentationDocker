@@ -19,6 +19,7 @@ after_success:
   - mv socket.io.js socket.io
   - mv README.html index.html
   - sed -f ../Client.sed index.html >client.html
+  - sed -f ../Master.sed client.html >master.html
   - cp -R ../images images
   - cp -R ../docs docs
   - cp -R ../reveal.js/css reveal.js/
