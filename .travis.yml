@@ -15,7 +15,7 @@ script:
 after_success:
   - cd output
   - mv README.html index.html
-  - sed -n -f ../Client.sed index.html >client.html
+  - sed -f ../Client.sed index.html >client.html
   - cp -R ../images images
   - cp -R ../docs docs
   - cp -R ../reveal.js/css reveal.js/
