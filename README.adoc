@@ -4,7 +4,7 @@
 // :backend: deckjs
 // ---
 :revealjs_mouseWheel: true
-:revealjsdir:.
+:revealjsdir: ./
 :revealjs_history: true
 :revealjs_hideAddressBar: true
 :imagesdir: ./images
