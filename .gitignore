@@ -1,2 +1,4 @@
 # Output directory for HTML files
 output/
+nbproject/
+/node_modules/
