@@ -27,6 +27,10 @@ after_success:
   - cp -R ../reveal.js/js reveal.js/
   - cp -R ../reveal.js/lib reveal.js/
   - cp -R ../reveal.js/plugin reveal.js/
+  - cp -R ../reveal.js/css .
+  - cp -R ../reveal.js/js .
+  - cp -R ../reveal.js/lib .
+  - cp -R ../reveal.js/plugin .
   - git init
   - git config user.name "${GH_USER_NAME}"
   - git config user.email "{GH_USER_EMAIL}"
