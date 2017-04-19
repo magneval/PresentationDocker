@@ -1,4 +1,4 @@
-magneval/openjdk8
+FROM magneval/openjdk8
 
 MAINTAINER magneval
 
