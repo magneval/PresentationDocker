@@ -18,19 +18,16 @@ after_success:
   - mkdir socket.io
   - mv socket.io.js socket.io
   - mv README.html index.html
-  - sed -f ../Client.sed index.html >client.html
-  - sed -f ../Master.sed client.html >master.html
   - cp ../package.json .
   - cp -R ../images images
   - cp -R ../docs docs
-  - cp -R ../reveal.js/css reveal.js/
-  - cp -R ../reveal.js/js reveal.js/
-  - cp -R ../reveal.js/lib reveal.js/
-  - cp -R ../reveal.js/plugin reveal.js/
   - cp -R ../reveal.js/css .
   - cp -R ../reveal.js/js .
   - cp -R ../reveal.js/lib .
   - cp -R ../reveal.js/plugin .
+  - sed -f ../Client.sed index.html >client.html
+  - sed -f ../Master.sed client.html >master.html
+  - sed -f ../Notes.sed plugin/notes-server/notes.html >notes.html
   - git init
   - git config user.name "${GH_USER_NAME}"
   - git config user.email "{GH_USER_EMAIL}"
