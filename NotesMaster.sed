@@ -1,1 +1,1 @@
-s/\/notes\//.\/notes.html\?socketId=/g
+s/\/notes\//.\/notes\.html\?socketId=/g
