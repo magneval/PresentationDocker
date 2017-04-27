@@ -27,7 +27,8 @@ after_success:
   - cp -R ../reveal.js/plugin .
   - sed -f ../Client.sed index.html >client.html
   - sed -f ../Master.sed client.html >master.html
-  - sed -f ../Notes.sed plugin/notes-server/notes.html >notes.html
+  - sed -f ../Notes.sed plugin/notes-server/notes.html >notes.hml
+  - sed -f ../NotesMaster.sed plugin/notes-server/notes.js > plugin/notes-server/master.js 
   - git init
   - git config user.name "${GH_USER_NAME}"
   - git config user.email "{GH_USER_EMAIL}"
