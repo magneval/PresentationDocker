@@ -17,7 +17,7 @@
 :link-demo-pdf: {link-github-project-ghpages}/demo.pdf
 :link-demo-adoc: https://raw.githubusercontent.com/magneval/PresentationDocker/master/demo.adoc
 :link-wiki: https://upload.wikimedia.org/wikipedia/commons/f/fa/Diagramme_ArchiHyperviseur.png
-:link-qr-code: qr
+:link-qr-code: image::https://api.qrserver.com/v1/create-qr-code/?data=magneval.github.io/PresentationDocker/client.html&amp;size=100x100&.png[]
 
 
 == Présentation Docker
@@ -27,7 +27,8 @@ Charles.de_magneval@open-groupe.com +
 v1.0, 2017-04-10 +
  +
 https://github.com/magneval/
-image::https://api.qrserver.com/v1/create-qr-code/?data=magneval.github.io/PresentationDocker/client.html&amp;size=100x100[]
+
+image::https://api.qrserver.com/v1/create-qr-code/?data=magneval.github.io/PresentationDocker/client.html&amp;size=100x100&.png[]
 
 === Plan
 [%step]
