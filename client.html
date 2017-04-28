@@ -1,0 +1,192 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><title>Présentation VM Docker</title><meta content="yes" name="apple-mobile-web-app-capable"><meta content="black-translucent" name="apple-mobile-web-app-status-bar-style"><meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui" name="viewport"><link href="./css/reveal.css" rel="stylesheet"><link rel="stylesheet" href="./css/theme/black.css" id="theme"><link href="./lib/css/zenburn.css" rel="stylesheet"><script>document.write( '<link rel="stylesheet" href="./css/print/' + ( window.location.search.match( /print-pdf/gi ) ? 'pdf' : 'paper' ) + '.css" type="text/css" media="print">' );</script></head><body><div class="reveal"><div class="slides"><section class="title"><h1>Présentation VM Docker</h1></section><section><section id="_prsentation_docker"><h2>Présentation Docker</h2><div class="paragraph"><p>Charles de MAGNEVAL<br>
+<a href="mailto:Charles.de_magneval@open-groupe.com">Charles.de_magneval@open-groupe.com</a><br>
+v1.0, 2017-04-10<br>
+<br>
+<a href="https://github.com/magneval/" class="bare">https://github.com/magneval/</a></p></div><div class="imageblock" id="qrCode" style=""><img src="https://api.qrserver.com/v1/create-qr-code/?data=magneval.github.io/PresentationDocker/client.html&amp;size=100x100&.png" alt="qrCode"></div></section><section id="_plan"><h2>Plan</h2><div class="ulist"><ul><li class="fragment"><p>historique</p></li><li class="fragment"><p>la virtualisation</p></li><li class="fragment"><p>les hypervirseurs</p></li><li class="fragment"><p>l&#8217;approche container</p></li><li class="fragment"><p>le cloud</p></li></ul></div></section></section>
+<section><section id="_historique"><h2>Historique</h2></section><section id="_l_ordinateur_8_bits"><h2>l&#8217;ordinateur 8 bits</h2><div class="ulist"><ul><li class="fragment"><p>un processeur</p></li><li class="fragment"><p>la RAM</p></li><li class="fragment"><p>la ROM</p></li><li class="fragment"><p>le stockage de masse</p></li><li class="fragment"><p>le programme</p></li></ul></div></section><section id="_la_version_16_bits"><h2>la version 16 bits</h2><div class="ulist"><ul><li class="fragment"><p>le multi-tache</p></li><li class="fragment"><p>le réseau</p></li><li class="fragment"><p>pas un programme, un OS</p></li></ul></div></section><section id="_les_os"><h2>les OS</h2><div class="ulist"><ul><li><p>dos</p></li><li><p>OS400</p></li><li><p>UNIX</p></li><li><p>Windows</p></li><li><p>Linux</p></li><li><p>Mac OS X</p></li></ul></div>
+<aside class="notes"><div class="paragraph"><p>Apparition d&#8217;api sur les couches basses<br>
+drivers<br>
+standardisation</p></div></aside></section></section>
+<section><section id="_la_virtualisation"><h2>la virtualisation</h2></section><section id="_la_virtualisation_2"><h2>la virtualisation</h2><div class="ulist"><ul><li><p>La migration IBM 36 vers IBM38 Oblige IBM a faire le premier émulateur.</p></li><li><p>On peut faire tourner une machine dans une autre.<br>
+La machine devient un simple programme</p></li></ul></div></section><section data-background-image="./images/Diagramme_ArchiEmulateur.png" data-background-size="contain"></section><section id="_la_virtualisation_3"><h2>la virtualisation</h2><div class="paragraph"><p>Il existe de nombreuses solutions :</p></div>
+<div class="ulist"><ul><li><p>VMware</p></li><li><p>Qemu</p></li><li><p>VirtualBox</p></li><li><p>Virtual PC</p></li></ul></div>
+<aside class="notes"><div class="paragraph"><p>On utilise tous une JVM</p></div></aside></section><section id="_les_hypervirseurs"><h2>les hypervirseurs</h2><div class="ulist"><ul><li><p>L&#8217;approche est similaire, mais l&#8217;OS est allégé pour permettre un accès plus rapide aux couches basse du système et donc améliorer les performances.</p></li><li><p>Cette technique peut aussi être aidée par des instructions spécial dans le cœur du processeur permettant un changement de contexte pour passer d&#8217;un OS a l&#8217;autre</p></li></ul></div></section><section data-background-image="./images/Diagramme_ArchiHyperviseur.png" data-background-size="contain"></section><section id="_les_hypervirseurs_2"><h2>les hypervirseurs</h2><div class="paragraph"><p>Les plus courants sont :</p></div>
+<div class="ulist"><ul><li><p>VMware ESX serveur</p></li><li><p>Xen (Citrix)</p></li><li><p>Microsoft Hyper-V Server</p></li></ul></div></section><section id="_l_approche_container"><h2>l&#8217;approche container</h2><div class="paragraph"><p>Ici plus de couche intermédiaires, on sépare juste le programme des autres</p></div></section><section data-background-image="./images/Diagramme_ArchiIsolateur.png" data-background-size="contain"></section><section id="_l_approche_container_2"><h2>l&#8217;approche container</h2><div class="paragraph"><p>L&#8217;approche existe depuis longtemps :</p></div>
+<div class="ulist"><ul><li><p>chroot</p></li><li><p>BSD Jail</p></li><li><p>Zone Solaris</p></li><li><p>LXC</p></li></ul></div></section></section>
+<section><section id="_docker"><h2>Docker</h2></section><section><div class="paragraph"><p>Solution basée sur des techniques existantes dans le noyau Linux et éprouvées :</p></div>
+<div class="ulist"><ul><li><p>LXC,</p></li><li><p>CGgroup,</p></li><li><p>virtualisation du réseau,</p></li><li><p>UnionFS,</p></li><li><p>&#8230;&#8203;</p></li></ul></div></section><section id="_approche_lgre"><h2>Approche légère</h2><div class="paragraph"><p>Il s&#8217;appuie plutôt sur les fonctionnalités du noyau et utilise l&#8217;isolation de ressources :</p></div>
+<div class="ulist"><ul><li><p>le processeur,</p></li><li><p>la mémoire,</p></li><li><p>les entrées et sorties</p></li><li><p>les connexions réseaux</p></li></ul></div></section><section id="_docker_2"><h2>Docker</h2><div class="paragraph"><p>gestion des espaces de noms séparés pour isoler le système d&#8217;exploitation tel que vu par l&#8217;application</p></div>
+<div class="paragraph"><p>Il peut tourner sous d&#8217;autre plate-forme comme Mac Os X ou Windows (mais via une VM Linux)</p></div></section><section id="_les_briques_de_docker"><h2>Les briques de Docker</h2><div class="ulist"><ul><li class="fragment"><p>Le Registry</p></li><li class="fragment"><p>Les Images</p></li><li class="fragment"><p>Les Containers</p></li></ul></div></section><section id="_docker_registry"><h2>Docker Registry</h2><div class="ulist"><ul><li><p>Centralisation des images</p></li><li><p>possibilité de :</p><div class="ulist"><ul><li><p>puller</p></li><li><p>pusher</p></li></ul></div></li></ul></div></section><section id="_docker_images"><h2>Docker Images</h2><div class="ulist"><ul><li><p>ensembles de couches contenant le système de fichier</p></li><li><p>compose a partir</p><div class="ulist"><ul><li><p>de couches de bases</p></li><li><p>d&#8217;action</p></li></ul></div></li><li><p>créer a partir de docker file</p></li><li><p>utilisation du copy-on-write</p></li></ul></div>
+<aside class="notes"><div class="paragraph"><p>Cette image est compose d&#8217;une image disque basique agrémenter d&#8217;actions d&#8217;installations complémentaires.
+Le processus est définis par le "Docker file".</p></div></aside></section><section id="_le_docker_file"><h2>Le Docker File</h2><div class="paragraph"><p>Contient :</p></div>
+<div class="ulist"><ul><li class="fragment"><p>l&#8217;image de base</p></li><li class="fragment"><p>la configuration</p></li><li class="fragment"><p>les services réseaux (ports ouvert)</p></li><li class="fragment"><p>Les dossiers Partages</p></li><li class="fragment"><p>Le Programme a lancer dans le container</p></li></ul></div>
+<aside class="notes"><div class="paragraph"><p>Une fois l&#8217;image généré, elle peut être réutiliser autant de fois que souhaite par le principe du COW.
+Le Copy On Write, permet de ne faire une copie que de ce qui doit être modifier et donc de réduire la taille de deux image différentes a la taille des fichiers modifies.
+Une même image peut être référencer dans la création de nombreux container</p></div></aside></section><section id="_exemple_de_docker_file"><h2>Exemple de Docker File</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="DockerFile language-DockerFile">FROM magneval/openjdk8
+
+MAINTAINER magneval
+
+RUN apt-get install -y tomcat8
+RUN    mkdir -p /home/developer
+
+ADD activiti-5.19.0.2.zip activiti.zip
+RUN unzip activiti.zip
+
+RUN cp activiti-5.19.0.2/wars/activiti-* /var/lib/tomcat8/webapps/
+ENV CATALINA_BASE /var/lib/tomcat8/
+VOLUME /exports
+
+CMD /usr/share/tomcat8/bin/catalina.sh  run</code></pre></div></div>
+<aside class="notes"><div class="paragraph"><p>Les couches d&#8217;images peuvent être partage pour éviter de le recréé a chaque fois.
+Le "Docker file" contient aussi la définition des ports réseau présenté et des dossier partage entre le système hôte et le container.</p></div>
+<div class="listingblock"><div class="content"><pre class="highlight"><code class="ENTRYPOINT["/usr/local/bin/nfs_setup"]``` language-ENTRYPOINT["/usr/local/bin/nfs_setup"]```"></code></pre></div></div></aside></section></section>
+<section><section id="_les_commandes_docker"><h2>les commandes Docker</h2></section><section id="_la_gestion_des_images"><h2>la gestion des images</h2><div class="dlist"><dl><dt class="hdlist1">Recherche une image sur Docker Hub</dt><dd><p>docker search jdk</p></dd><dt class="hdlist1">builder les images</dt><dd><p><code>docker build -t image_name -f Dockerfile .</code></p></dd><dt class="hdlist1">tag une image sur le repository</dt><dd><p><code>docker tag nginx localhost:5000/nginx</code></p></dd><dt class="hdlist1">Affiche l&#8217;historique d&#8217;une image</dt><dd><p><code>docker history image_name</code></p></dd></dl></div></section><section id="_la_gestion_des_images_2"><h2>la gestion des images</h2><div class="dlist"><dl><dt class="hdlist1">push</dt><dd><p>Push an image or a repository to a Docker registry server</p></dd><dt class="hdlist1">pull</dt><dd><p>Pull an image or a repository from a Docker registry server</p></dd><dt class="hdlist1">images</dt><dd><p>List images</p></dd></dl></div></section><section id="_la_gestion_des_images_3"><h2>la gestion des images</h2><div class="dlist"><dl><dt class="hdlist1">save</dt><dd><p>Save an image to a tar archive</p></dd><dt class="hdlist1">load</dt><dd><p>Load an image from a tar archive</p></dd><dt class="hdlist1">effacer les images avec le tag "none"</dt><dd><p><code>docker rmi -f $(docker images | grep "&lt;none&gt;" | awk "{print \$3}")</code></p></dd></dl></div></section><section id="_pour_les_instances"><h2>pour les instances</h2><div class="dlist"><dl><dt class="hdlist1">run</dt><dd><p>Run a command in a new container</p></dd><dt class="hdlist1">exec</dt><dd><p>Run a command in an existing container</p></dd><dt class="hdlist1">ps</dt><dd><p>List containers</p></dd><dt class="hdlist1">top</dt><dd><p>Lookup the running processes of a container</p></dd></dl></div></section><section id="_pour_les_instances_2"><h2>pour les instances</h2><div class="dlist"><dl><dt class="hdlist1">port</dt><dd><p>Lookup the public-facing port that is NAT-ed to PRIVATE_PORT</p></dd><dt class="hdlist1">cp</dt><dd><p>Copy files/folders from a container&#8217;s filesystem to the host path</p></dd><dt class="hdlist1">attach</dt><dd><p>Attach to a running container</p></dd></dl></div></section><section id="_pour_les_instances_3"><h2>pour les instances</h2><div class="dlist"><dl><dt class="hdlist1">commit</dt><dd><p>Create a new image from a container&#8217;s changes</p></dd><dt class="hdlist1">stop</dt><dd><p>Stop a running container</p></dd><dt class="hdlist1">start</dt><dd><p>Start a stopped container</p></dd><dt class="hdlist1">restart</dt><dd><p>Restart a running container</p></dd></dl></div></section><section id="_pour_les_instances_4"><h2>pour les instances</h2><div class="dlist"><dl><dt class="hdlist1">pause</dt><dd><p>Pause all processes within a container</p></dd><dt class="hdlist1">unpause</dt><dd><p>Unpause a paused container</p></dd><dt class="hdlist1">kill</dt><dd><p>Kill a running container</p></dd><dt class="hdlist1">rm</dt><dd><p>Remove one or more containers</p></dd></dl></div>
+<aside class="notes"><div class="paragraph"><p>version Docker
+  <code>docker version</code>
+informations sur docker
+  <code>docker info</code>
+visualiser les containers en cours d&#8217;éxécution
+  <code>docker ps</code>
+lancement du container en mode daemon sur des ports d&#8217;écoutes
+  <code>docker run --name container_name -p 40080:80 -p 33061:3306 -d image_name</code>
+connexion sur un container
+  <code>docker exec -it container_name /bin/bash</code>
+lancement d&#8217;un container avec le mode restart
+  <code>docker run --restart=always --name container_name -p 127.0.0.1:40080:80/tcp -d image_name</code>
+arrêt et supression d&#8217;un container
+  <code>docker stop container_name; docker rm container_name</code>
+sauvegarde d&#8217;un container en image
+  <code>docker commit container_name image_name</code>
+visualsation des containers en exécution
+  <code>docker ps -a</code>
+sauvegarde et restauration des images
+  <code>docker save -o &lt;save image to path&gt; &lt;image name&gt;</code>
+  <code>docker load -i &lt;path to image tar file&gt;</code>
+push et pull sur un repository local
+  <code>docker tag nginx localhost:5000/nginx</code>
+  <code>docker push localhost:5000/nginx</code>
+  <code>docker pull docker.somehost.com:5000/nginx</code>
+détails sur les images
+  <code>docker inspect image_name</code>
+effacer les containers qui ont été stoppés
+  <code>docker rm $(docker ps -q -f status=exited)docker rm $(docker ps -q -f status=exited)</code></p></div></aside></section><section data-background-image="./images/commandes-docker.gif" data-background-size="contain">
+<aside class="notes"><div class="literalblock"><div class="content"><pre>create    Create a new container
+diff      Inspect changes on a container's filesystem
+events    Get real time events from the server
+export    Stream the contents of a container as a tar archive
+import    Create a new filesystem image from the contents of a tarball
+info      Display system-wide information
+inspect   Return low-level information on a container
+login     Register or log in to a Docker registry server
+logout    Log out from a Docker registry server
+logs      Fetch the logs of a container
+version   Show the Docker version information
+wait      Block until a container stops, then print its exit code</pre></div></div></aside></section></section>
+<section><section id="_docker_compose"><h2>Docker Compose</h2></section><section id="_exemple"><h2>Exemple</h2><div class="listingblock"><div class="content"><pre class="highlight"><code class="YAML language-YAML">version: "2"
+
+services:
+ mysql:
+  container_name: mysql-sb
+  ports:
+   - "3306:3306"
+  volumes:
+    - web-logs:/var/log/mysql
+ ihm:
+  image: demo/springboot-mysql:0.0.1
+  container_name: front
+  ports:
+   - "8085:8080"
+  links:
+   - mysql</code></pre></div></div></section><section id="_commandes"><h2>Commandes</h2><div class="dlist"><dl><dt class="hdlist1">build</dt><dd><p>Build or rebuild services</p></dd><dt class="hdlist1">bundle</dt><dd><p>Generate a Docker bundle from the Compose file</p></dd><dt class="hdlist1">config</dt><dd><p>Validate and view the compose file</p></dd><dt class="hdlist1">create</dt><dd><p>Create services</p></dd></dl></div></section><section id="_commandes_2"><h2>Commandes</h2><div class="dlist"><dl><dt class="hdlist1">down</dt><dd><p>Stop and remove containers, networks, images, and volumes</p></dd><dt class="hdlist1">events</dt><dd><p>Receive real time events from containers</p></dd><dt class="hdlist1">exec</dt><dd><p>Execute a command in a running container</p></dd><dt class="hdlist1">kill</dt><dd><p>Kill containers</p></dd></dl></div></section><section id="_commandes_3"><h2>Commandes</h2><div class="dlist"><dl><dt class="hdlist1">logs</dt><dd><p>View output from containers</p></dd><dt class="hdlist1">pause</dt><dd><p>Pause services</p></dd><dt class="hdlist1">port</dt><dd><p>Print the public port for a port binding</p></dd><dt class="hdlist1">ps</dt><dd><p>List containers</p></dd></dl></div></section><section id="_commandes_4"><h2>Commandes</h2><div class="dlist"><dl><dt class="hdlist1">pull</dt><dd><p>Pull service images</p></dd><dt class="hdlist1">push</dt><dd><p>Push service images</p></dd><dt class="hdlist1">restart</dt><dd><p>Restart services</p></dd><dt class="hdlist1">rm</dt><dd><p>Remove stopped containers</p></dd></dl></div></section><section id="_commandes_5"><h2>Commandes</h2><div class="dlist"><dl><dt class="hdlist1">run</dt><dd><p>Run a one-off command</p></dd><dt class="hdlist1">scale</dt><dd><p>Set number of containers for a service</p></dd><dt class="hdlist1">start</dt><dd><p>Start services</p></dd><dt class="hdlist1">stop</dt><dd><p>Stop services</p></dd></dl></div></section><section id="_commandes_6"><h2>Commandes</h2><div class="dlist"><dl><dt class="hdlist1">unpause</dt><dd><p>Unpause services</p></dd><dt class="hdlist1">up</dt><dd><p>Create and start containers</p></dd><dt class="hdlist1">version</dt><dt class="hdlist1">Show</dt><dd><p>the Docker-Compose version information</p></dd></dl></div></section></section>
+<section><section id="_docker_swarm"><h2>Docker Swarm</h2></section><section id="_command_swarm"><h2>command Swarm</h2><div class="dlist"><dl><dt class="hdlist1">init</dt><dd><p>Initialize a swarm</p></dd><dt class="hdlist1">join</dt><dd><p>Join a swarm as a node and/or manager</p></dd><dt class="hdlist1">join-token</dt><dd><p>Manage join tokens</p></dd><dt class="hdlist1">update</dt><dd><p>Update the swarm</p></dd></dl></div></section><section id="_command_swarm_2"><h2>command Swarm</h2><div class="dlist"><dl><dt class="hdlist1">leave</dt><dd><p>Leave the swarm (workers only)</p></dd></dl></div></section><section id="_command_node"><h2>command Node</h2><div class="dlist"><dl><dt class="hdlist1">demote</dt><dd><p>Demote one or more nodes from manager in the swarm</p></dd><dt class="hdlist1">inspect</dt><dd><p>Display detailed information on one or more nodes</p></dd><dt class="hdlist1">ls</dt><dd><p>List nodes in the swarm</p></dd><dt class="hdlist1">promote</dt><dd><p>Promote one or more nodes to manager in the swarm</p></dd></dl></div></section><section id="_command_node_2"><h2>command Node</h2><div class="dlist"><dl><dt class="hdlist1">rm</dt><dd><p>Remove one or more nodes from the swarm</p></dd><dt class="hdlist1">ps</dt><dd><p>List tasks running on a node</p></dd><dt class="hdlist1">update</dt><dd><p>Update a node</p></dd></dl></div></section></section>
+<section id="_le_cloud"><h2>le cloud</h2><div class="ulist"><ul><li><p>cloud.docker.com</p></li><li><p>codeship.com</p></li><li><p>Amazon Web Services</p></li><li><p>Microsoft Azure</p></li><li><p>Digital Ocean</p></li><li><p>Exoscale</p></li></ul></div></section>
+<section id="_le_cloud_2"><h2>le cloud</h2><div class="ulist"><ul><li><p>Google Compute Engine</p></li><li><p>OpenStack</p></li><li><p>Rackspace</p></li><li><p>IBM Softlayer</p></li><li><p>Heroku</p></li></ul></div>
+<aside class="notes"><div class="paragraph"><p><a href="https://blog.codeship.com/the-shortlist-of-docker-hosting/" class="bare">https://blog.codeship.com/the-shortlist-of-docker-hosting/</a></p></div></aside></section></div></div><script src="./lib/js/head.min.js"></script><script src="./js/reveal.js"></script><script>// See https://github.com/hakimel/reveal.js#configuration for a full list of configuration options
+Reveal.initialize({
+  // Display controls in the bottom right corner
+  controls: true,
+  // Display a presentation progress bar
+  progress: true,
+  // Display the page number of the current slide
+  slideNumber: false,
+  // Push each slide change to the browser history
+  history: true,
+  // Enable keyboard shortcuts for navigation
+  keyboard: true,
+  // Enable the slide overview mode
+  overview: true,
+  // Vertical centering of slides
+  center: true,
+  // Enables touch navigation on devices with touch input
+  touch: true,
+  // Loop the presentation
+  loop: false,
+  // Change the presentation direction to be RTL
+  rtl: false,
+  // Turns fragments on and off globally
+  fragments: true,
+  // Flags if the presentation is running in an embedded mode,
+  // i.e. contained within a limited portion of the screen
+  embedded: false,
+  // Number of milliseconds between automatically proceeding to the
+  // next slide, disabled when set to 0, this value can be overwritten
+  // by using a data-autoslide attribute on your slides
+  autoSlide: 0,
+  // Stop auto-sliding after user input
+  autoSlideStoppable: true,
+  // Enable slide navigation via mouse wheel
+  mouseWheel: true,
+  // Hides the address bar on mobile devices
+  hideAddressBar: true,
+  // Opens links in an iframe preview overlay
+  previewLinks: false,
+  // Theme (e.g., beige, black, league, night, serif, simple, sky, solarized, white)
+  // NOTE setting the theme in the config no longer works in reveal.js 3.x
+  //theme: Reveal.getQueryHash().theme || 'black',
+  // Transition style (e.g., none, fade, slide, convex, concave, zoom)
+  transition: Reveal.getQueryHash().transition || 'slide',
+  // Transition speed (e.g., default, fast, slow)
+  transitionSpeed: 'default',
+  // Transition style for full page slide backgrounds (e.g., none, fade, slide, convex, concave, zoom)
+  backgroundTransition: 'fade',
+  // Number of slides away from the current that are visible
+  viewDistance: 3,
+  // Parallax background image (e.g., "'https://s3.amazonaws.com/hakim-static/reveal-js/reveal-parallax-1.jpg'")
+  parallaxBackgroundImage: '',
+  // Parallax background size in CSS syntax (e.g., "2100px 900px")
+  parallaxBackgroundSize: '',
+
+  // The "normal" size of the presentation, aspect ratio will be preserved
+  // when the presentation is scaled to fit different resolutions. Can be
+  // specified using percentage units.
+  width: 960,
+  height: 700,
+
+  // Factor of the display size that should remain empty around the content
+  margin: 0.1,
+
+  // Bounds for smallest/largest possible scale to apply to content
+  minScale: 0.2,
+  maxScale: 1.5,
+
+  // Optional libraries used to extend on reveal.js
+
+  multiplex: {
+    secret: null,
+    id: '14925103434334420107',
+    url: 'https://reveal-js-multiplex-ccjbegmaii.now.sh'
+   },
+
+
+  dependencies: [
+      { src: 'socket.io/socket.io.js', async: true },
+      { src: 'plugin/multiplex/client.js', async: true },
+
+      { src: './lib/js/classList.js', condition: function() { return !document.body.classList; } },
+      { src: './plugin/markdown/marked.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: './plugin/markdown/markdown.js', condition: function() { return !!document.querySelector( '[data-markdown]' ); } },
+      { src: './plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } },
+      { src: './plugin/zoom-js/zoom.js', async: true, condition: function() { return !!document.body.classList; } },
+      { src: './plugin/notes/notes.js', async: true, condition: function() { return !!document.body.classList; } }
+  ]
+});</script></body></html>
