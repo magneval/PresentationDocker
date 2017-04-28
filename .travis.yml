@@ -18,6 +18,7 @@ after_success:
   - mkdir socket.io
   - mv socket.io.js socket.io
   - mv README.html index.html
+  - cp ../.gitignore .
   - cp ../package.json .
   - cp -R ../images images
   - cp -R ../docs docs
