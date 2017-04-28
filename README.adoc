@@ -195,7 +195,7 @@ Contient :
 * la configuration
 * les services réseaux (ports ouvert)
 * Les dossiers Partages
-* Le Programme lancer dans le container
+* Le Programme a lancer dans le container
 
 [NOTE.speaker]
 --
