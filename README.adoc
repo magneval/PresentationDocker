@@ -9,6 +9,7 @@
 :revealjs_hideAddressBar: true
 :imagesdir: ./images
 :source-highlighter: highlightjs
+:theme: jekyll-theme-hacker
 
 = Présentation VM Docker
 
