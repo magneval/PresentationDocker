@@ -35,7 +35,7 @@ image::https://api.qrserver.com/v1/create-qr-code/?data=magneval.github.io/Prese
 [%step]
 * historique
 * la virtualisation
-* les hypervirseurs
+* les hyperviseurs
 * l'approche container
 * le cloud
 
@@ -97,7 +97,7 @@ Il existe de nombreuses solutions :
 On utilise tous une JVM
 --
 
-=== les hypervirseurs
+=== les hyperviseurs
 
 * L'approche est similaire, mais l'OS est allégé pour permettre un accès plus rapide aux couches basse du système et donc améliorer les performances. 
 
@@ -107,7 +107,7 @@ On utilise tous une JVM
 
 image::Diagramme_ArchiHyperviseur.png[canvas,size=contain]
 
-=== les hypervirseurs
+=== les hyperviseurs
 
 Les plus courants sont :
 
