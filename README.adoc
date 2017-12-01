@@ -232,6 +232,11 @@ tag une image sur le repository::
 Affiche l'historique d'une image::
 `docker history image_name`
 
+[NOTE.speaker]
+--
+https://labs.play-with-docker.com/
+--
+
 === la gestion des images
 [%step]
 push::
