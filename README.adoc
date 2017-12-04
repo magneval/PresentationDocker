@@ -37,6 +37,7 @@ image::https://api.qrserver.com/v1/create-qr-code/?data=magneval.github.io/Prese
 * la virtualisation
 * les hyperviseurs
 * l'approche container
+* Docker
 * le cloud
 
 == Historique
@@ -116,6 +117,8 @@ Les plus courants sont :
 * VMware ESX serveur
 * Xen (Citrix)
 * Microsoft Hyper-V Server
+
+== l'approche container
 
 === l'approche container
 
